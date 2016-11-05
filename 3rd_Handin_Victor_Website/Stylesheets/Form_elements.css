@@ -1,0 +1,19 @@
+﻿
+
+.input_field {
+    padding: 7px;
+    margin: 8px 0 12px 0;
+}
+
+.Form_Labels {
+    font-family: roboto;
+}
+
+.button {
+    background-color: #063376;
+    color: #FFF;   
+    font-family: roboto;
+    padding: 10px 12px;
+    border-width: 0;
+    border-radius: 5px;
+}

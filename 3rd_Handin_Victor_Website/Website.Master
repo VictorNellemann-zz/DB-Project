@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Website.master.cs" Inherits="_3rd_Handin_Victor_Website.Website" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>MasterPage</title>
+    <link rel="stylesheet" type="text/css" href="Stylesheets/Fonte.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/Website_elements.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/Form_elements.css">
+    <link href="https://fonts.googleapis.com/css?family=Carter+One|Droid+Sans|Roboto" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="WebsiteWrapper">
+        <div class="Header">
+            <div style="float: left; display: block;">
+                <a id="Logo" href="Default.aspx">Pokémon Database</a>
+            </div>
+            <div id="Ash_img" style="float: right;">
+                <img src="Images/Ash_Ketchum_img.png" style="width: 110px; display: block;" />
+            </div>
+        </div>
+        <div id="Menu">
+            <ul>
+                <li><a href="default.aspx">Home</a></li>
+                <li><a href="Registration.aspx">Sign up</a></li>
+                <li><a href="myPage.aspx">My Pokehunter Page</a></li>
+                <li style="float: right"><a class="active" href="#about">Administrator</a></li>
+            </ul>
+        </div>        
+        <div class="Banner">
+            <img src="Images/banner_img-1.jpg" alt="Pokemon" style="width:940px; height: 228px; margin: 0;">
+        </div>
+        <div id="Content_Wrapper">
+            <div id="Content_left">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="Content_right">
+                <h2>Pokehunter log in</h2>
+                <div id="login_wrapper" style="margin-top: 20px">
+                    <asp:Label ID="Label_Name" runat="server" Text="Name" CssClass="Form_Labels"></asp:Label>
+                    <asp:TextBox ID="TextBox_name" runat="server" CssClass="input_field" Width="236px" OnTextChanged="TextBox_name_TextChanged"></asp:TextBox>
+                    <asp:Label ID="Label_Password" runat="server" Text="Password" CssClass="Form_Labels"></asp:Label>
+                    <asp:TextBox ID="TextBox_Password" runat="server" CssClass="input_field" Width="236px" OnTextChanged="TextBox_Password_TextChanged"></asp:TextBox>
+                    <asp:Button ID="Button_Login" runat="server" Text="Login" CssClass="button" OnClick="Page_Load"/>
+                </div>    
+            </div>
+        </div>
+        <div id="Bottom">
+            <p>Victor Nellemann</p>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
