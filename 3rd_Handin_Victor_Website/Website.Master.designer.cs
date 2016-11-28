@@ -31,13 +31,13 @@ namespace _3rd_Handin_Victor_Website {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// LabelUserInfo control.
+        /// ContainerMyPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUserInfo;
+        protected global::System.Web.UI.WebControls.PlaceHolder ContainerMyPage;
         
         /// <summary>
         /// IsLoggedInContainer control.
@@ -49,13 +49,13 @@ namespace _3rd_Handin_Victor_Website {
         protected global::System.Web.UI.WebControls.PlaceHolder IsLoggedInContainer;
         
         /// <summary>
-        /// UsernameLabel control.
+        /// LabelUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label UsernameLabel;
+        protected global::System.Web.UI.WebControls.Label LabelUsername;
         
         /// <summary>
         /// IsNotLoggedInContainer control.

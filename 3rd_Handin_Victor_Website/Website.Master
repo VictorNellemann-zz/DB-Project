@@ -31,13 +31,12 @@
             <ul>
                 <li><a href="default.aspx">Home</a></li>
                 <li><a href="Registration.aspx">Sign up!</a></li>
-                <li><a href="myPage.aspx">My Pokehunter Page</a></li>
-                <li style="float: right">
-                    <asp:Label ID="LabelUserInfo" runat="server" Text="">
-                </asp:Label></li>
+                <asp:PlaceHolder runat="server" ID="ContainerMyPage">
+                    <li><a href="myPage.aspx">My Pokehunter Page</a></li>
+                </asp:PlaceHolder>
                 <asp:PlaceHolder runat="server" ID="IsLoggedInContainer">
                 <li style="float: right">
-                    <asp:Label ID="UsernameLabel" runat="server" Text="username"></asp:Label>
+                    <asp:Label ID="LabelUsername" runat="server" Text="username"></asp:Label>
                 </li>
                 </asp:PlaceHolder>
                 <asp:PlaceHolder runat="server" ID="IsNotLoggedInContainer">
@@ -50,7 +49,7 @@
         <div class="Banner">
             <img src="Images/banner_img-1.jpg" alt="Pokemon" style="width:940px; height: 228px; margin: 0;">
         </div>
-        <div id="Content_Wrapper" style="padding: 30px 0px 30px 0px; min-height:400px; overflow: auto;">
+        <div id="Content_Wrapper" style="padding: 30px 0px 30px 0px; min-height:350px; overflow: auto;">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     
             </asp:ContentPlaceHolder>
@@ -61,7 +60,7 @@
             </div>
             <asp:PlaceHolder runat="server" ID="isAdminContainer">
             <div style="display:inline-block; float:right; width:30%; text-align:right">
-                <a href="Administration.aspx" style="color: black">Adminstrator</a>
+                <a href="Administration.aspx" style="color: black">Administrator</a>
             </div>
             </asp:PlaceHolder>
         </div>

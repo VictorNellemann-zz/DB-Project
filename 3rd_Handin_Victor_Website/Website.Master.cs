@@ -18,13 +18,14 @@ namespace _3rd_Handin_Victor_Website
             var isLoggedIn = Session["Name"] != null && !string.IsNullOrEmpty(Session["Name"].ToString());
             var isAdmin = Session["Admin"] != null && !string.IsNullOrEmpty(Session["Admin"].ToString());
 
+            ContainerMyPage.Visible = isLoggedIn;
             IsLoggedInContainer.Visible = isLoggedIn;
             IsNotLoggedInContainer.Visible = !isLoggedIn;
             isAdminContainer.Visible = isAdmin && isLoggedIn;
 
             if (isLoggedIn)
             {
-                UsernameLabel.Text = Session["Name"].ToString();
+                LabelUsername.Text = Session["Name"].ToString();
             }
         }
     }
