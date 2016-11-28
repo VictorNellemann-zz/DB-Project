@@ -4,11 +4,12 @@
 
 <html>
 <head runat="server">
-    <title>MasterPage</title>
+    <title>Pokémon Database</title>
     <link rel="stylesheet" type="text/css" href="Stylesheets/Fonte.css">
     <link rel="stylesheet" type="text/css" href="Stylesheets/Website_elements.css">
     <link rel="stylesheet" type="text/css" href="Stylesheets/Form_elements.css">
     <link href="https://fonts.googleapis.com/css?family=Carter+One|Droid+Sans|Roboto" rel="stylesheet">
+    <link href="~/Misc/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -19,40 +20,41 @@
             <div style="float: left; display: block;">
                 <a id="Logo" href="Default.aspx">Pokémon Database</a>
             </div>
-            <div id="Ash_img" style="float: right;">
+            <div style="float: right;">
                 <img src="Images/Ash_Ketchum_img.png" style="width: 110px; display: block;" />
+            </div>
+            <div style="float: right;">
+                <img src="Images/psyduck.jpg" style="width: 50px; margin-right: 20px; display: block;" />
             </div>
         </div>
         <div id="Menu">
             <ul>
                 <li><a href="default.aspx">Home</a></li>
-                <li><a href="Registration.aspx">Sign up</a></li>
+                <li><a href="Registration.aspx">Sign up!</a></li>
                 <li><a href="myPage.aspx">My Pokehunter Page</a></li>
-                <li style="float: right"><a class="active" href="#about">Administrator</a></li>
+                <li style="float: right">
+                    <asp:Label ID="LabelUserInfo" runat="server" Text="">
+                </asp:Label></li>
+                <li style="float: right"><a class="active" href="LoginPage.aspx">
+                    <asp:Label ID="LabelLoginLink" runat="server" Text="Pokehunter Login"></asp:Label>
+                </a></li>
             </ul>
-        </div>        
+        </div>
         <div class="Banner">
             <img src="Images/banner_img-1.jpg" alt="Pokemon" style="width:940px; height: 228px; margin: 0;">
         </div>
-        <div id="Content_Wrapper">
-            <div id="Content_left">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <div id="Content_Wrapper" style="padding: 30px 0px 30px 0px; min-height:400px">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     
-                </asp:ContentPlaceHolder>
-            </div>
-            <div id="Content_right">
-                <h2>Pokehunter log in</h2>
-                <div id="login_wrapper" style="margin-top: 20px">
-                    <asp:Label ID="Label_Name" runat="server" Text="Name" CssClass="Form_Labels"></asp:Label>
-                    <asp:TextBox ID="TextBox_name" runat="server" CssClass="input_field" Width="236px" OnTextChanged="TextBox_name_TextChanged"></asp:TextBox>
-                    <asp:Label ID="Label_Password" runat="server" Text="Password" CssClass="Form_Labels"></asp:Label>
-                    <asp:TextBox ID="TextBox_Password" runat="server" CssClass="input_field" Width="236px" OnTextChanged="TextBox_Password_TextChanged"></asp:TextBox>
-                    <asp:Button ID="Button_Login" runat="server" Text="Login" CssClass="button" OnClick="Page_Load"/>
-                </div>    
-            </div>
+            </asp:ContentPlaceHolder>
         </div>
         <div id="Bottom">
-            <p>Victor Nellemann</p>
+            <div style="display:inline-block; float:left; width:70%">
+                <p>Database & XML - 3rd hand-in by Victor Nellemann </p>
+            </div>
+            <div style="display:inline-block; float:right; width:30%; text-align:right">
+                <a href="Administration.aspx" style="color: black">Adminstrator login</a>
+            </div>
         </div>
     </div>
     </form>

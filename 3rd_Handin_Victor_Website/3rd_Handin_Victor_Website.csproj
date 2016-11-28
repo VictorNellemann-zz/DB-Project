@@ -94,9 +94,28 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminAdd.aspx" />
+    <Content Include="AdminDelete.aspx" />
+    <Content Include="Administration.aspx" />
+    <Content Include="AdminUpdate.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\AshKetchum_standing2.png" />
+    <Content Include="Images\Pokemons\bulbasaur.jpg" />
+    <Content Include="Images\Pokemons\charmander.jpg" />
+    <Content Include="Images\Pokemons\diglett.jpg" />
+    <Content Include="Images\Pokemons\machop.jpg" />
+    <Content Include="Images\Pokemons\nidoran.jpg" />
+    <Content Include="Images\Pokemons\PictureMissing.jpg" />
+    <Content Include="Images\Pokemons\pikachu.jpg" />
+    <Content Include="Images\Pokemons\psyduck.jpg" />
+    <Content Include="Images\Pokemons\sandshrew.jpg" />
+    <Content Include="Images\Pokemons\squirtle.jpg" />
     <Content Include="Images\pokemon_BG.png" />
+    <Content Include="Images\psyduck.jpg" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="Misc\favicon.ico" />
     <Content Include="MyPage.aspx" />
+    <Content Include="MyPageDelete.aspx" />
     <Content Include="Stylesheets\Fonte.css" />
     <Content Include="Images\Ash_Ketchum_img.png" />
     <Content Include="Images\banner_img-1.jpg" />
@@ -122,6 +141,34 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAdd.aspx.cs">
+      <DependentUpon>AdminAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAdd.aspx.designer.cs">
+      <DependentUpon>AdminAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDelete.aspx.cs">
+      <DependentUpon>AdminDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDelete.aspx.designer.cs">
+      <DependentUpon>AdminDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.aspx.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration.aspx.designer.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdate.aspx.cs">
+      <DependentUpon>AdminUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUpdate.aspx.designer.cs">
+      <DependentUpon>AdminUpdate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,12 +176,26 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MyPage.aspx.cs">
       <DependentUpon>MyPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MyPage.aspx.designer.cs">
       <DependentUpon>MyPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyPageDelete.aspx.cs">
+      <DependentUpon>MyPageDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyPageDelete.aspx.designer.cs">
+      <DependentUpon>MyPageDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.aspx.cs">

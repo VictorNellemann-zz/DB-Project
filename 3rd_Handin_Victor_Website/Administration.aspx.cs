@@ -8,41 +8,38 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace _3rd_Handin_Victor_Website
 {
-    public partial class MyPage : System.Web.UI.Page
+    public partial class Administration : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Name"] == null)
-            {
-                Response.Redirect("LoginPage.aspx");
-            }
-
-            else
-            {
-                LabelPokehunter.Text = "Logged in as: " + Session["Name"].ToString();
-            }
+            if (!Page.IsPostBack)
             {
                 UpdateGridView();
             }
         }
 
-        public void UpdateGridView()
+        private void UpdateGridView()
         {
             SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
-            SqlCommand cmd = null;
-            SqlDataReader rdr = null;
-            string sqlsel = "SELECT * FROM Catches";
+            SqlDataAdapter da = null;
+            DataSet ds = null;
+            DataTable dt = null;
+            string sqlsel = "SELECT PokemonNumber,PokemonName,NextEvulotion,PictureLink FROM Pokemons";
 
             try
             {
-                conn.Open();
-                cmd = new SqlCommand(sqlsel, conn);
-                rdr = cmd.ExecuteReader();
+                da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand(sqlsel, conn);
 
-                GridViewCatches.DataSource = rdr;
-                GridViewCatches.DataBind();
+                ds = new DataSet();
+                da.Fill(ds, "MyPokemons");
+                dt = ds.Tables["MyPokemons"];
+
+                GridViewPokemons.DataSource = dt;
+                GridViewPokemons.DataBind();
             }
             catch (Exception ex)
             {
@@ -55,4 +52,3 @@ namespace _3rd_Handin_Victor_Website
         }
     }
 }
-

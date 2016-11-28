@@ -10,43 +10,7 @@
 namespace _3rd_Handin_Victor_Website {
     
     
-    public partial class MyPage {
-        
-        /// <summary>
-        /// ButtonAdd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAdd;
-        
-        /// <summary>
-        /// ButtonUpdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonUpdate;
-        
-        /// <summary>
-        /// ButtonDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonDelete;
-        
-        /// <summary>
-        /// LabelMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMessage;
+    public partial class MyPageDelete {
         
         /// <summary>
         /// LabelPokehunter control.
@@ -58,12 +22,39 @@ namespace _3rd_Handin_Victor_Website {
         protected global::System.Web.UI.WebControls.Label LabelPokehunter;
         
         /// <summary>
-        /// GridViewCatches control.
+        /// DropDownCatches control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCatches;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownCatches;
+        
+        /// <summary>
+        /// LabelMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelMessage;
+        
+        /// <summary>
+        /// ButtonDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonDelete;
+        
+        /// <summary>
+        /// GridViewDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewDelete;
     }
 }

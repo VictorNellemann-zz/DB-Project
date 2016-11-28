@@ -10,123 +10,96 @@
 namespace _3rd_Handin_Victor_Website {
     
     
-    public partial class Registration {
+    public partial class AdminAdd {
         
         /// <summary>
-        /// LabelName control.
+        /// LabelPokeName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelName;
+        protected global::System.Web.UI.WebControls.Label LabelPokeName;
         
         /// <summary>
-        /// RequiredFieldValidatorName control.
+        /// RequiredFieldValidatorPokeName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPokeName;
         
         /// <summary>
-        /// TextBoxName control.
+        /// TextBoxPokeName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxName;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPokeName;
         
         /// <summary>
-        /// LabelMail control.
+        /// LabelNextEvol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMail;
+        protected global::System.Web.UI.WebControls.Label LabelNextEvol;
         
         /// <summary>
-        /// RequiredFieldValidatorEmail control.
+        /// TextBoxNextEvol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEmail;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNextEvol;
         
         /// <summary>
-        /// RegularExpressionValidatorEmail control.
+        /// LabelPic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorEmail;
+        protected global::System.Web.UI.WebControls.Label LabelPic;
         
         /// <summary>
-        /// TextBoxMail control.
+        /// TextBoxPic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMail;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPic;
         
         /// <summary>
-        /// LabelPassword control.
+        /// LabelMessageAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPassword;
+        protected global::System.Web.UI.WebControls.Label LabelMessageAdd;
         
         /// <summary>
-        /// RequiredFieldValidatorPassword control.
+        /// ButtonAddPokemon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPassword;
+        protected global::System.Web.UI.WebControls.Button ButtonAddPokemon;
         
         /// <summary>
-        /// RegularExpressionValidatorPassword control.
+        /// GridViewAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorPassword;
-        
-        /// <summary>
-        /// TextBoxPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
-        
-        /// <summary>
-        /// ButtonSignUp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSignUp;
-        
-        /// <summary>
-        /// LabelMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMessage;
+        protected global::System.Web.UI.WebControls.GridView GridViewAdd;
     }
 }

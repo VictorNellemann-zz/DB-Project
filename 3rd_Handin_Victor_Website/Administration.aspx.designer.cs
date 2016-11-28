@@ -10,7 +10,7 @@
 namespace _3rd_Handin_Victor_Website {
     
     
-    public partial class MyPage {
+    public partial class Administration {
         
         /// <summary>
         /// ButtonAdd control.
@@ -49,21 +49,12 @@ namespace _3rd_Handin_Victor_Website {
         protected global::System.Web.UI.WebControls.Label LabelMessage;
         
         /// <summary>
-        /// LabelPokehunter control.
+        /// GridViewPokemons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPokehunter;
-        
-        /// <summary>
-        /// GridViewCatches control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCatches;
+        protected global::System.Web.UI.WebControls.GridView GridViewPokemons;
     }
 }

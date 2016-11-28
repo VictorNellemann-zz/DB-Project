@@ -4,7 +4,6 @@
     text-decoration: none;
     color: #063376;
     font-weight: bold;
-    margin: 0 0 0 0;
     }
 
 h1 {
@@ -15,8 +14,8 @@ h1 {
 
 h2 {
     font-family: 'Droid Sans', sans-serif;
-    margin: 0px 0px 5px 0px;
-    font-size: 18px;
+    margin: 0px 0px 15px 0px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -24,6 +23,12 @@ p {
     font-family: 'Roboto', 'Times New Roman', serif;
     line-height: 1.4em;
     margin: 0 0 1.8em 0;
+}
+
+a  {
+    font-family: 'Roboto', 'Times New Roman', serif;
+    color: red;
+    text-decoration: none;     
 }
 
 ul {

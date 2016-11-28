@@ -10,60 +10,60 @@
 namespace _3rd_Handin_Victor_Website {
     
     
-    public partial class MyPage {
+    public partial class LoginPage {
         
         /// <summary>
-        /// ButtonAdd control.
+        /// Label_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAdd;
+        protected global::System.Web.UI.WebControls.Label Label_Name;
         
         /// <summary>
-        /// ButtonUpdate control.
+        /// TextBoxName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonUpdate;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxName;
         
         /// <summary>
-        /// ButtonDelete control.
+        /// Label_Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonDelete;
+        protected global::System.Web.UI.WebControls.Label Label_Password;
         
         /// <summary>
-        /// LabelMessage control.
+        /// TextBoxPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMessage;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
         
         /// <summary>
-        /// LabelPokehunter control.
+        /// ButtonLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPokehunter;
+        protected global::System.Web.UI.WebControls.Button ButtonLogin;
         
         /// <summary>
-        /// GridViewCatches control.
+        /// LabelLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCatches;
+        protected global::System.Web.UI.WebControls.Label LabelLogin;
     }
 }

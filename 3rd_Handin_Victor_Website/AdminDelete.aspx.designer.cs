@@ -10,34 +10,16 @@
 namespace _3rd_Handin_Victor_Website {
     
     
-    public partial class MyPage {
+    public partial class AdminDelete {
         
         /// <summary>
-        /// ButtonAdd control.
+        /// DropDownListPokemons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAdd;
-        
-        /// <summary>
-        /// ButtonUpdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonUpdate;
-        
-        /// <summary>
-        /// ButtonDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonDelete;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListPokemons;
         
         /// <summary>
         /// LabelMessage control.
@@ -49,21 +31,21 @@ namespace _3rd_Handin_Victor_Website {
         protected global::System.Web.UI.WebControls.Label LabelMessage;
         
         /// <summary>
-        /// LabelPokehunter control.
+        /// ButtonDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPokehunter;
+        protected global::System.Web.UI.WebControls.Button ButtonDelete;
         
         /// <summary>
-        /// GridViewCatches control.
+        /// GridViewDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCatches;
+        protected global::System.Web.UI.WebControls.GridView GridViewDelete;
     }
 }
