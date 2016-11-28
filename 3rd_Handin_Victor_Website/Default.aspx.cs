@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace _3rd_Handin_Victor_Website
 {
@@ -14,7 +15,7 @@ namespace _3rd_Handin_Victor_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string connString = @"server=.\PC17186; Integrated Security=true; database=Pokemons;";
+            string connString = ConfigurationManager.ConnectionStrings["Pokemon"].ToString();
             string query = @" SELECT TOP 5 PictureLink FROM Pokemons";
 
             DataTable dt = new DataTable();

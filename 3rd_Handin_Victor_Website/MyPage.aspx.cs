@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace _3rd_Handin_Victor_Website
 {
@@ -30,15 +31,23 @@ namespace _3rd_Handin_Victor_Website
 
         public void UpdateGridView()
         {
-            SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Pokemon"].ToString());
             SqlCommand cmd = null;
             SqlDataReader rdr = null;
-            string sqlsel = "SELECT * FROM Catches";
+            string sqlsel = @"
+                SELECT
+	                p.PokemonName
+                FROM [Pokemons].[dbo].[Catches] c
+                INNER JOIN Pokemons p ON p.PokemonNumber = c.PokemonNumber
+                WHERE c.PokehunterID = @PokehunterID
+                ORDER BY
+	                p.PokemonName";
 
             try
             {
                 conn.Open();
                 cmd = new SqlCommand(sqlsel, conn);
+                cmd.Parameters.Add("@PokehunterID", SqlDbType.Int).Value = int.Parse(Session["PokehunterID"].ToString());
                 rdr = cmd.ExecuteReader();
 
                 GridViewCatches.DataSource = rdr;

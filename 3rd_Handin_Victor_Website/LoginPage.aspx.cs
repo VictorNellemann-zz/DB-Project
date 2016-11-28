@@ -7,13 +7,13 @@ using System.Web.UI.WebControls;
 
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace _3rd_Handin_Victor_Website
 {
     public partial class LoginPage : System.Web.UI.Page
     {
-        SqlConnection conn = new SqlConnection
-           (@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Pokemon"].ToString());
         SqlCommand cmd = new SqlCommand();
         private string query;
 
@@ -28,23 +28,29 @@ namespace _3rd_Handin_Victor_Website
             query = "sp_LoginPokehunter";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Name", TextBoxName.Text.ToString());
+            cmd.Parameters.AddWithValue("@Username", TextBoxName.Text.ToString());
             cmd.Parameters.AddWithValue("@Password", TextBoxPassword.Text.ToString());
 
-            var firstColumn = cmd.ExecuteScalar();
-
-            if (firstColumn != null)
+            using (var reader = cmd.ExecuteReader())
             {
-                Session["Name"] = TextBoxName.Text;
-                Response.Redirect("MyPage.aspx");
-                Session.RemoveAll();
+                if(reader.HasRows)
+                {
+                    reader.Read();
 
-            }
+                    Session["Name"] = reader["Name"].ToString();
+                    Session["Admin"] = Convert.ToBoolean(reader["IsAdmin"].ToString());
+                    Session["PokehunterID"] = Convert.ToInt32(reader["PokehunterID"].ToString());
 
-            else
-            {
-                conn.Close();
-                LabelLogin.Text = "Invalid user name or password";
+                    conn.Close();
+                    Response.Redirect("MyPage.aspx");
+                }
+                else
+                {
+                    conn.Close();
+                    LabelLogin.Text = "Invalid user name or password";
+
+                    Response.Redirect("LoginPage.aspx");
+                }
             }
         }
     }
