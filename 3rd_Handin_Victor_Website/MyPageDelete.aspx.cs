@@ -14,6 +14,14 @@ namespace _3rd_Handin_Victor_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Name"] == null)
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
+            else
+            {
+                LabelPokehunter.Text = "Logged in as: " + Session["Name"].ToString();
+            }
             if (!Page.IsPostBack)
             {
                 ButtonDelete.Enabled = false;
@@ -30,7 +38,14 @@ namespace _3rd_Handin_Victor_Website
             SqlDataAdapter da = null;
             DataSet ds = null;
             DataTable dt = null;
-            string sqlsel = "SELECT * FROM Catches";
+            string sqlsel = @"
+                SELECT
+	                p.PokemonName
+                FROM [Pokemons].[dbo].[Catches] c
+                INNER JOIN Pokemons p ON p.PokemonNumber = c.PokemonNumber
+                WHERE c.PokehunterID = @PokehunterID
+                ORDER BY
+	                p.PokemonName";
 
             try
             {
@@ -82,7 +97,14 @@ namespace _3rd_Handin_Victor_Website
             SqlCommandBuilder cb = null;
             DataSet ds = null;
             DataTable dt = null;
-            string sqlsel = "SELECT * FROM Catches";
+            string sqlsel = @"
+                SELECT
+	                p.PokemonName
+                FROM [Pokemons].[dbo].[Catches] c
+                INNER JOIN Pokemons p ON p.PokemonNumber = c.PokemonNumber
+                WHERE c.PokehunterID = @PokehunterID
+                ORDER BY
+	                p.PokemonName";
 
             try
             {

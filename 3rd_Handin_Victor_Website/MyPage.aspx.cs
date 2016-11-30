@@ -31,7 +31,7 @@ namespace _3rd_Handin_Victor_Website
 
         public void UpdateGridView()
         {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Pokemon"].ToString());
+            SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
             SqlCommand cmd = null;
             SqlDataReader rdr = null;
             string sqlsel = @"

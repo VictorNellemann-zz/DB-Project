@@ -35,9 +35,9 @@
                     <li><a href="myPage.aspx">My Pokehunter Page</a></li>
                 </asp:PlaceHolder>
                 <asp:PlaceHolder runat="server" ID="IsLoggedInContainer">
-                <li style="float: right">
-                    <asp:Label ID="LabelUsername" runat="server" Text="username"></asp:Label>
-                </li>
+                <li style="float: right"><a class="active" href="LoginPage.aspx">
+                    <asp:Label ID="LabelUsername" runat="server" CssClass="FormLabels"></asp:Label>
+                </a></li>
                 </asp:PlaceHolder>
                 <asp:PlaceHolder runat="server" ID="IsNotLoggedInContainer">
                 <li style="float: right"><a class="active" href="LoginPage.aspx">

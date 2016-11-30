@@ -25,8 +25,10 @@ namespace _3rd_Handin_Victor_Website
 
             if (isLoggedIn)
             {
-                LabelUsername.Text = Session["Name"].ToString();
+                LabelUsername.Text = "User: " + Session["Name"] + " // Log out".ToString();
             }
         }
     }
 }
+
+

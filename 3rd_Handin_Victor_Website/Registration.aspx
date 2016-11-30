@@ -33,7 +33,7 @@
             <asp:Label ID="LabelMessage" runat="server" ForeColor="#CC0000" Font-Names="Arial"></asp:Label>
         </div>
     </div>
-    <div style="display: inline-block; float: right; width: 20%; margin-top: -30px">
+    <div style="display: inline-block; float: right; width: 22%; margin-top: -30px">
         <img src="/images/AshKetchum_standing2.png" alt="Sign up, mate!" height="420px">
     </div>
 </div>

@@ -25,8 +25,7 @@ namespace _3rd_Handin_Victor_Website
 
         private void UpdateGridView()
         {
-            SqlConnection conn = new SqlConnection
-                (@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
+            SqlConnection conn = new SqlConnection (@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
             SqlDataAdapter da = null;
             DataSet ds = null;
             DataTable dt = null;

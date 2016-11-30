@@ -15,13 +15,13 @@ namespace _3rd_Handin_Victor_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string connString = ConfigurationManager.ConnectionStrings["Pokemon"].ToString();
+            SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
             string query = @" SELECT TOP 5 PictureLink FROM Pokemons";
 
             DataTable dt = new DataTable();
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter(query, connString);
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 da.Fill(dt);
             }
             catch (Exception ex)
