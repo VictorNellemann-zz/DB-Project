@@ -133,6 +133,7 @@
     <Content Include="Registration.aspx" />
     <Content Include="Stylesheets\Form_elements.css" />
     <Content Include="Stylesheets\Website_elements.css" />
+    <Content Include="temp.aspx" />
     <Content Include="Website.Master" />
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +205,13 @@
     </Compile>
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="temp.aspx.cs">
+      <DependentUpon>temp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="temp.aspx.designer.cs">
+      <DependentUpon>temp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website.Master.cs">
       <DependentUpon>Website.Master</DependentUpon>

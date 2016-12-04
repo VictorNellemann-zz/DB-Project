@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 
 namespace _3rd_Handin_Victor_Website
 {
@@ -19,7 +18,6 @@ namespace _3rd_Handin_Victor_Website
             {
                 Response.Redirect("LoginPage.aspx");
             }
-
             else
             {
                 LabelPokehunter.Text = "Logged in as: " + Session["Name"].ToString();

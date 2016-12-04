@@ -22,13 +22,9 @@ namespace _3rd_Handin_Victor_Website
             {
                 LabelPokehunter.Text = "Logged in as: " + Session["Name"].ToString();
             }
-            if (!Page.IsPostBack)
             {
-                ButtonDelete.Enabled = false;
                 UpdateGridView();
             }
-
-            DropDownCatches.AutoPostBack = true;
         }
 
         private void UpdateGridView()
