@@ -100,6 +100,8 @@
     <Content Include="AdminUpdate.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Images\AshKetchum_standing2.png" />
+    <Content Include="Images\banner_img-2.jpg" />
+    <Content Include="Images\banner_img-3.jpg" />
     <Content Include="Images\Pokemons\bulbasaur.jpg" />
     <Content Include="Images\Pokemons\charmander.jpg" />
     <Content Include="Images\Pokemons\diglett.jpg" />
@@ -112,6 +114,13 @@
     <Content Include="Images\Pokemons\squirtle.jpg" />
     <Content Include="Images\pokemon_BG.png" />
     <Content Include="Images\psyduck.jpg" />
+    <Content Include="Images\SponsorLogos\Logo-BMW.png" />
+    <Content Include="Images\SponsorLogos\Logo-Disney.png" />
+    <Content Include="Images\SponsorLogos\Logo-GitHub.png" />
+    <Content Include="Images\SponsorLogos\Logo-Indiegogo.png" />
+    <Content Include="Images\SponsorLogos\Logo-Mailchimp.png" />
+    <Content Include="Images\SponsorLogos\Logo-Nasa.png" />
+    <Content Include="Images\SponsorLogos\Logo-Playboy.png" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Misc\favicon.ico" />
     <Content Include="MyPage.aspx" />
@@ -124,6 +133,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="XMLFiles\Sponsors.xml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

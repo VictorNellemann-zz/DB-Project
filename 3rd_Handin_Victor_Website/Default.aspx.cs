@@ -16,7 +16,7 @@ namespace _3rd_Handin_Victor_Website
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
-            string query = @" SELECT TOP 5 PictureLink FROM Pokemons";
+            string query = @" SELECT TOP 6 PictureLink FROM Pokemons";
 
             DataTable dt = new DataTable();
             try

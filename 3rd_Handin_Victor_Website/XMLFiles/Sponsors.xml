@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" standalone="yes" ?>
+
+<Sponsors>
+  <Sponsor>
+    <SponsorId>1</SponsorId>
+    <Name>Nasa</Name>
+    <Website>www.nasa.com</Website>
+    <Logo>Logo-Nasa</Logo>
+  </Sponsor>
+  <Sponsor>
+    <SponsorId>2</SponsorId>
+    <Name>Mailchimp</Name>
+    <Website>www.mailchimp.com</Website>
+    <Logo>Logo-Mailchimp</Logo>   
+  </Sponsor>
+</Sponsors>
