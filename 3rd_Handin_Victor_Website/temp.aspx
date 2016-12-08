@@ -8,9 +8,24 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-    </div>
+        <div style="height: 150px">
+            <asp:Repeater ID="RepeaterSponsors" runat="server">
+                <ItemTemplate>
+                    <table>
+                        <tr>
+                            <td><%# Eval("Name") %></td>
+                        </tr>
+                        <tr>
+                            <td><a href="<%# Eval("Website") %>">
+                                <img src="Images/SponsorLogos/<%# Eval("Logo") %>.png" /></a>
+                            </td>
+                        </tr>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </table>
+                </FooterTemplate>
+            </asp:Repeater>
+        </div>
     </form>
 </body>
 </html>

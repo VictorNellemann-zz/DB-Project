@@ -22,22 +22,24 @@
             <div style="display:inline-flex; background-color:#333;width:25%;height:50px;float:left">
                 <p style="color: #fff; margin: 15px; font-size: 17px">Top 5 Sponsors</p>
             </div>
-            <div>
-                <asp:Repeater ID="RepeaterSponsors" runat="server">
-                    <ItemTemplate>
-                        <table>
+        </div>
+        <div style="margin-top: 30px">
+            <asp:Repeater ID="RepeaterSponsors" runat="server">
+                <ItemTemplate>
+                    <table>
+                        <tbody>
                             <tr>
-                                <td><%# Eval("Name") %></td>
+                                <td style="text-align:center; margin-left:15px; margin-right:15px; font-family:Arial"><%# Eval("Name") %></td>
                             </tr>
                             <tr>
-                                <td><a href="<%# Eval("Website") %>"><img src="Images/SponsorLogos/<%# Eval("Logo") %>"/></a></td>
+                                <td style="margin-left:15px; margin-right:15px"><a href="<%# Eval("Website") %>">
+                                    <img src="Images/SponsorLogos/<%# Eval("Logo") %>.png"; Style="width:170px"/></a>
+                                </td>
                             </tr>
-                    </ItemTemplate>
-                    <FooterTemplate>
-                        </table>
-                    </FooterTemplate>
-                </asp:Repeater>
-            </div>
+                        </tbody>
+                    </table>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
     </div>
 </asp:Content>

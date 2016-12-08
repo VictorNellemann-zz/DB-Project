@@ -4,13 +4,13 @@
   <Sponsor>
     <SponsorId>1</SponsorId>
     <Name>Nasa</Name>
-    <Website>www.nasa.com</Website>
+    <Website>https://www.nasa.gov/</Website>
     <Logo>Logo-Nasa</Logo>
   </Sponsor>
   <Sponsor>
     <SponsorId>2</SponsorId>
     <Name>Mailchimp</Name>
-    <Website>www.mailchimp.com</Website>
+    <Website>https://mailchimp.com/</Website>
     <Logo>Logo-Mailchimp</Logo>   
   </Sponsor>
 </Sponsors>

@@ -102,6 +102,7 @@
     <Content Include="Images\AshKetchum_standing2.png" />
     <Content Include="Images\banner_img-2.jpg" />
     <Content Include="Images\banner_img-3.jpg" />
+    <Content Include="Images\banner_img-4.jpg" />
     <Content Include="Images\Pokemons\bulbasaur.jpg" />
     <Content Include="Images\Pokemons\charmander.jpg" />
     <Content Include="Images\Pokemons\diglett.jpg" />
@@ -133,7 +134,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="XMLFiles\Sponsors.xml" />
+    <Content Include="XMLFiles\Sponsors.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
