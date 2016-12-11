@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" standalone="yes" ?>
-
+<?xml version="1.0" standalone="yes"?>
 <Sponsors>
   <Sponsor>
     <SponsorId>1</SponsorId>
@@ -11,6 +10,24 @@
     <SponsorId>2</SponsorId>
     <Name>Mailchimp</Name>
     <Website>https://mailchimp.com/</Website>
-    <Logo>Logo-Mailchimp</Logo>   
+    <Logo>Logo-Mailchimp</Logo>
+  </Sponsor>
+  <Sponsor>
+    <SponsorId>3</SponsorId>
+    <Name>GitHub</Name>
+    <Website>https://github.com/</Website>
+    <Logo>Logo-GitHub</Logo>
+  </Sponsor>
+  <Sponsor>
+    <SponsorId>4</SponsorId>
+    <Name>Playboy</Name>
+    <Website>http://www.playboy.com/</Website>
+    <Logo>Logo-Playboy</Logo>
+  </Sponsor>
+  <Sponsor>
+    <SponsorId>5</SponsorId>
+    <Name>Disney</Name>
+    <Website>http://disney.dk/	</Website>
+    <Logo>Logo-Disney</Logo>
   </Sponsor>
 </Sponsors>

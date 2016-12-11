@@ -1,0 +1,12 @@
+﻿.table-header {
+    padding:7px 7px 7px 7px;
+    background-color:#eaeaea;
+    font-family: 'Roboto', Arial, serif;
+    font-size: 19px;
+    font-weight:bold;
+    }
+
+.td-style {
+    padding:5px 7px 5px 7px;
+    font-family: 'Roboto', Arial, serif;    font-size: 12px;
+    }

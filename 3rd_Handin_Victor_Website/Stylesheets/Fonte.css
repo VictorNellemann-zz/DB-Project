@@ -7,7 +7,7 @@
     }
 
 h1 {
-    font-family: 'Droid Sans', 'Times New Roman', serif;
+    font-family: 'Droid Sans', 'Arial', serif;
     margin: 0px 0px 15px 0px;
     font-size: 27px;
 }
@@ -20,13 +20,13 @@ h2 {
 }
 
 p {
-    font-family: 'Roboto', 'Times New Roman', serif;
+    font-family: 'Roboto', 'Arial', serif;
     line-height: 1.4em;
     margin: 0 0 1.8em 0;
 }
 
 a  {
-    font-family: 'Roboto', 'Times New Roman', serif;
+    font-family: 'Roboto', Arial, serif;
     color: red;
     text-decoration: none;     
 }

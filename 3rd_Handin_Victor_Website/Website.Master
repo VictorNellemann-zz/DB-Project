@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="Stylesheets/Fonte.css">
     <link rel="stylesheet" type="text/css" href="Stylesheets/Website_elements.css">
     <link rel="stylesheet" type="text/css" href="Stylesheets/Form_elements.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/Table.css">
     <link href="https://fonts.googleapis.com/css?family=Carter+One|Droid+Sans|Roboto" rel="stylesheet">
     <link href="~/Misc/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -55,12 +56,12 @@
             </asp:ContentPlaceHolder>
         </div>
         <div id="Bottom">
-            <div style="display:inline-block; float:left; width:70%">
+            <div style="display:inline-block; float:left; width:40%">
                 <p>Database & XML - 3rd hand-in by Victor Nellemann </p>
             </div>
             <asp:PlaceHolder runat="server" ID="isAdminContainer">
-            <div style="display:inline-block; float:right; width:30%; text-align:right">
-                <a href="Administration.aspx" style="color: black">Administrator</a>
+            <div style="display:inline-block; float:right; width:60%; text-align:right">
+                <p>Administration: <a href="Administration.aspx" style="color: black">Pokémon</a> - <a href="AdminSponsor.aspx" style="color: black">Sponsors</a></p>
             </div>
             </asp:PlaceHolder>
         </div>

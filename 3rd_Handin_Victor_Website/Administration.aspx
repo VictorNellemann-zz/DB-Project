@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="display:inline-block; float:left; width:280PX">
+    <div style="display:inline-block; float:left; width:280px">
         <h1>Administration</h1>
         <div>
             <asp:Button ID="ButtonAdd" runat="server" Text="Add a new pokémon" CssClass="button" PostBackUrl="~/AdminAdd.aspx" Font-Size="Larger" />
