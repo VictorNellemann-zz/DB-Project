@@ -13,22 +13,13 @@ namespace _3rd_Handin_Victor_Website {
     public partial class MyPageDelete {
         
         /// <summary>
-        /// LabelPokehunter control.
+        /// DropDownListDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPokehunter;
-        
-        /// <summary>
-        /// DropDownCatches control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownCatches;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListDelete;
         
         /// <summary>
         /// LabelMessage control.
@@ -47,6 +38,15 @@ namespace _3rd_Handin_Victor_Website {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonDelete;
+        
+        /// <summary>
+        /// LabelPokehunter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelPokehunter;
         
         /// <summary>
         /// GridViewDelete control.

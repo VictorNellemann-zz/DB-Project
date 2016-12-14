@@ -22,18 +22,19 @@ namespace _3rd_Handin_Victor_Website
             {
                 LabelPokehunter.Text = "Logged in as: " + Session["Name"].ToString();
             }
+
+            if (!Page.IsPostBack)
             {
                 UpdateGridView();
             }
+            DropDownListDelete.AutoPostBack = true;
         }
 
-        private void UpdateGridView()
+        public void UpdateGridView()
         {
-            SqlConnection conn = new SqlConnection
-                (@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
-            SqlDataAdapter da = null;
-            DataSet ds = null;
-            DataTable dt = null;
+            SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
+            SqlCommand cmd = null;
+            SqlDataReader rdr = null;
             string sqlsel = @"
                 SELECT
 	                p.PokemonName
@@ -42,24 +43,24 @@ namespace _3rd_Handin_Victor_Website
                 WHERE c.PokehunterID = @PokehunterID
                 ORDER BY
 	                p.PokemonName";
-
             try
             {
-                da = new SqlDataAdapter();
-                da.SelectCommand = new SqlCommand(sqlsel, conn);
+                conn.Open();
+                cmd = new SqlCommand(sqlsel, conn);
+                rdr = cmd.ExecuteReader();
 
-                ds = new DataSet();
-                da.Fill(ds, "MyCatches");
-                dt = ds.Tables["MyCatches"];
-
-                GridViewDelete.DataSource = dt;
+                GridViewDelete.DataSource = rdr;
                 GridViewDelete.DataBind();
 
-                DropDownCatches.DataSource = dt;
-                DropDownCatches.DataTextField = "CatchID";
-                DropDownCatches.DataValueField = "CatchID";
-                DropDownCatches.DataBind();
-                DropDownCatches.Items.Insert(0, "Select catch to delete");
+                rdr.Close();
+                rdr = cmd.ExecuteReader();
+
+                DropDownListDelete.DataSource = rdr;
+                DropDownListDelete.DataTextField = "PokemonName";
+                DropDownListDelete.DataValueField = "CatchID";
+                DropDownListDelete.DataBind();
+                DropDownListDelete.Items.Insert(0, "Select a catch");
+
             }
             catch (Exception ex)
             {
@@ -69,70 +70,8 @@ namespace _3rd_Handin_Victor_Website
             {
                 conn.Close();
             }
-        }
 
-        protected void DropDownCatches_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (DropDownCatches.SelectedIndex == 0)
-            {
-                LabelMessage.Text = "You choose none";
-                ButtonDelete.Enabled = false;
-            }
-            else
-            {
-                LabelMessage.Text = "You chose catch: " + DropDownCatches.SelectedValue;
-                ButtonDelete.Enabled = true;
-            }
-        }
 
-        protected void ButtonDelete_Click(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection
-                (@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
-            SqlDataAdapter da = null;
-            SqlCommandBuilder cb = null;
-            DataSet ds = null;
-            DataTable dt = null;
-            string sqlsel = @"
-                SELECT
-	                p.PokemonName
-                FROM [Pokemons].[dbo].[Catches] c
-                INNER JOIN Pokemons p ON p.PokemonNumber = c.PokemonNumber
-                WHERE c.PokehunterID = @PokehunterID
-                ORDER BY
-	                p.PokemonName";
-
-            try
-            {
-                da = new SqlDataAdapter();
-                da.SelectCommand = new SqlCommand(sqlsel, conn);
-
-                cb = new SqlCommandBuilder(da);
-
-                ds = new DataSet();
-                da.Fill(ds, "MyCatches");
-                dt = ds.Tables["MyCatches"];
-
-                foreach (DataRow myrow in dt.Select("CatchID =" + Convert.ToInt32(DropDownCatches.SelectedValue)))
-                {
-                    myrow.Delete();
-                }
-
-                da.Update(ds, "MyCatches");
-
-                ButtonDelete.Enabled = false;
-                LabelMessage.Text = "Catch " + DropDownCatches.SelectedValue + " was deleted from the database";
-            }
-            catch (Exception ex)
-            {
-                LabelMessage.Text = ex.Message;
-            }
-            finally
-            {
-                conn.Close();
-
-                UpdateGridView();
-            }
         }
     }
 }

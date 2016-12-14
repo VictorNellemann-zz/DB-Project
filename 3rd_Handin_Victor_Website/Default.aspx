@@ -27,16 +27,14 @@
             <asp:Repeater ID="RepeaterSponsors" runat="server">
                 <ItemTemplate>
                     <table>
-                        <tbody>
-                            <tr>
-                                <td style="text-align:center; margin-left:15px; margin-right:15px; font-family:Arial"><%# Eval("Name") %></td>
-                            </tr>
-                            <tr>
-                                <td style="margin-left:15px; margin-right:15px"><a href="<%# Eval("Website") %>">
-                                    <img src="Images/SponsorLogos/<%# Eval("Logo") %>.png"; Style="width:170px"/></a>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tr>
+                            <td style="text-align:center; margin-left:15px; margin-right:15px; font-family:Arial"><%# Eval("Name") %></td>
+                        </tr>  
+                        <tr>
+                            <td style="margin-left:15px; margin-right:15px"><a href="<%# Eval("Website") %>">
+                                <img src="Images/SponsorLogos/<%# Eval("Logo") %>.png"; Style="width:170px"/></a>
+                            </td>
+                        </tr>
                     </table>
                 </ItemTemplate>
             </asp:Repeater>

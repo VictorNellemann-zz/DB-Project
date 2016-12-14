@@ -41,8 +41,6 @@ namespace _3rd_Handin_Victor_Website
                 {
                     conn.Close();
                     LabelLogin.Text = "Invalid user name or password";
-
-                    Response.Redirect("LoginPage.aspx");
                 }
             }
         }
