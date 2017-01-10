@@ -8,13 +8,13 @@
 
         </h1>
         <div style="margin-top:20px; margin-bottom:10px">
-            <asp:DropDownList ID="DropDownListDelete" runat="server" CssClass="input_field" AutoPostBack="False" Width="200px" OnSelectedIndexChanged="DropDownListDelete_SelectedIndexChanged"></asp:DropDownList>
+            <asp:DropDownList ID="DropDownListMyDelete" runat="server" CssClass="input_field" Width="200px" AutoPostBack="True" OnSelectedIndexChanged="DropDownListMyDelete_SelectedIndexChanged"></asp:DropDownList>
         </div>
         <div style="margin-top: 15px; margin-bottom: 15px">
             <asp:Label ID="LabelMessage" runat="server" Font-Names="roboto" ForeColor="Black"></asp:Label>
         </div>
         <div>
-            <asp:Button ID="ButtonDelete" runat="server" CssClass="button" OnClick="ButtonDelete_Click" Text="Delete" />
+            <asp:Button ID="ButtonMyDelete" runat="server" CssClass="button" Text="Delete" OnClick="ButtonMyDelete_Click" />
         </div>
     </div>
     <div style="display: inline-block; float: right; width: 580px; padding-left:30px; border-left:solid 1px #ccc; min-height:400px">

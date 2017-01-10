@@ -13,13 +13,13 @@ namespace _3rd_Handin_Victor_Website {
     public partial class MyPageDelete {
         
         /// <summary>
-        /// DropDownListDelete control.
+        /// DropDownListMyDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListDelete;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListMyDelete;
         
         /// <summary>
         /// LabelMessage control.
@@ -31,13 +31,13 @@ namespace _3rd_Handin_Victor_Website {
         protected global::System.Web.UI.WebControls.Label LabelMessage;
         
         /// <summary>
-        /// ButtonDelete control.
+        /// ButtonMyDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonDelete;
+        protected global::System.Web.UI.WebControls.Button ButtonMyDelete;
         
         /// <summary>
         /// LabelPokehunter control.

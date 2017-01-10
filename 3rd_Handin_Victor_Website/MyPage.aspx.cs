@@ -57,6 +57,7 @@ namespace _3rd_Handin_Victor_Website
             }
             finally
             {
+                rdr.Close();
                 conn.Close();
             }
         }
