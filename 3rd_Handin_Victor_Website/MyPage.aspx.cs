@@ -32,14 +32,9 @@ namespace _3rd_Handin_Victor_Website
             SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
             SqlCommand cmd = null;
             SqlDataReader rdr = null;
-            string sqlsel = @"
-                SELECT
-	                p.PokemonName
-                FROM [Pokemons].[dbo].[Catches] c
-                INNER JOIN Pokemons p ON p.PokemonNumber = c.PokemonNumber
-                WHERE c.PokehunterID = @PokehunterID
-                ORDER BY
-	                p.PokemonName";
+            string sqlsel = @"SELECT c.CatchID, p.PokemonName FROM [Pokemons].[dbo].[Catches] c 
+                        INNER JOIN Pokemons p ON p.PokemonNumber = c.PokemonNumber 
+                        WHERE c.PokehunterID = @PokehunterID ORDER BY c.CatchID DESC";
 
             try
             {
@@ -57,8 +52,14 @@ namespace _3rd_Handin_Victor_Website
             }
             finally
             {
-                rdr.Close();
-                conn.Close();
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+                if (conn != null)
+                {
+                    conn.Close();
+                }
             }
         }
     }

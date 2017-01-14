@@ -8,14 +8,15 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace _3rd_Handin_Victor_Website
 {
-    public partial class MyPageDelete : System.Web.UI.Page
+    public partial class MyPageAdd : System.Web.UI.Page
     {
         SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
         SqlCommand cmd = null;
         SqlDataReader rdr = null;
-        string sqldel = @"SELECT c.CatchID, p.PokemonName FROM [Pokemons].[dbo].[Catches] c 
+        string sqladd = @"SELECT c.CatchID, p.PokemonName FROM [Pokemons].[dbo].[Catches] c 
                         INNER JOIN Pokemons p ON p.PokemonNumber = c.PokemonNumber 
                         WHERE c.PokehunterID = @PokehunterID ORDER BY c.CatchID DESC";
 
@@ -29,12 +30,11 @@ namespace _3rd_Handin_Victor_Website
             {
                 LabelPokehunter.Text = "Logged in as: " + Session["Name"].ToString();
             }
-
             if (!Page.IsPostBack)
             {
                 UpdateGridView();
             }
-            DropDownListMyDelete.AutoPostBack = true;
+            DropDownListPokemons.AutoPostBack = true;
         }
 
         public void UpdateGridView()
@@ -42,12 +42,12 @@ namespace _3rd_Handin_Victor_Website
             try
             {
                 conn.Open();
-                cmd = new SqlCommand(sqldel, conn);
+                cmd = new SqlCommand(sqladd, conn);
                 cmd.Parameters.Add("@PokehunterID", SqlDbType.Int).Value = int.Parse(Session["PokehunterID"].ToString());
                 rdr = cmd.ExecuteReader();
 
-                GridViewDelete.DataSource = rdr;
-                GridViewDelete.DataBind();
+                GridViewCatch.DataSource = rdr;
+                GridViewCatch.DataBind();
             }
             catch (Exception ex)
             {
@@ -68,15 +68,15 @@ namespace _3rd_Handin_Victor_Website
             try
             {
                 conn.Open();
-                cmd = new SqlCommand(sqldel, conn);
+                cmd = new SqlCommand("SELECT * FROM Pokemons", conn);
                 cmd.Parameters.Add("@PokehunterID", SqlDbType.Int).Value = int.Parse(Session["PokehunterID"].ToString());
                 rdr = cmd.ExecuteReader();
 
-                DropDownListMyDelete.DataSource = rdr;
-                DropDownListMyDelete.DataTextField = "PokemonName";
-                DropDownListMyDelete.DataValueField = "CatchID";
-                DropDownListMyDelete.DataBind();
-                DropDownListMyDelete.Items.Insert(0, "Select a catch");
+                DropDownListPokemons.DataSource = rdr;
+                DropDownListPokemons.DataTextField = "PokemonName";
+                DropDownListPokemons.DataValueField = "PokemonNumber";
+                DropDownListPokemons.DataBind();
+                DropDownListPokemons.Items.Insert(0, "Select a Pokemon to catch");
             }
             catch (Exception ex)
             {
@@ -93,14 +93,13 @@ namespace _3rd_Handin_Victor_Website
                     conn.Close();
                 }
             }
-
         }
 
-        protected void DropDownListMyDelete_SelectedIndexChanged(object sender, EventArgs e)
+        protected void DropDownListPokemons_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (DropDownListMyDelete.SelectedIndex != 0)
+            if (DropDownListPokemons.SelectedIndex != 0)
             {
-                LabelMessage.Text = "You chose catch " + DropDownListMyDelete.SelectedValue;
+                LabelMessage.Text = "Attempt to catch " + DropDownListPokemons.SelectedValue;
             }
             else
             {
@@ -108,31 +107,48 @@ namespace _3rd_Handin_Victor_Website
             }
         }
 
-        protected void ButtonMyDelete_Click(object sender, EventArgs e)
+        protected void ButtonAdd_Click(object sender, EventArgs e)
         {
-            try
-            {
-                conn.Open();
-                cmd = new SqlCommand("DELETE FROM Catches WHERE CatchID = @CatchID", conn);
+            Random rnd = new Random();
+            int r = rnd.Next(0, 50);
 
-                cmd.Parameters.Add("@CatchID", SqlDbType.Int);
-                cmd.Parameters["@CatchID"].Value = Convert.ToInt32(DropDownListMyDelete.SelectedValue);
-
-                cmd.ExecuteNonQuery();
-                LabelMessage.Text = "Catch has been deleted";
-            }
-            catch (Exception ex)
+            if (r <= 25)
             {
-                LabelMessage.Text = ex.Message;
-            }
-            finally
-            {
-                if (conn != null)
+                try
                 {
-                    conn.Close();
+                    conn.Open();
+                    cmd = new SqlCommand("INSERT INTO catches VALUES (@PokehunterID, @PokemonNumber)", conn);
+
+                    cmd.Parameters.Add("@PokehunterID", SqlDbType.Int).Value = int.Parse(Session["PokehunterID"].ToString());
+                    cmd.Parameters.Add("@PokemonNumber", SqlDbType.Int).Value = DropDownListPokemons.SelectedValue;
+
+                    cmd.ExecuteNonQuery();
+
+                    LabelMessage.Text = "";
+                    LabelNeg.Text = "";
+                    LabelPos.Text = "You got it!!!";
+                    DropDownListPokemons.Items.Insert(0, "Select a Pokemon to catch");
+
                 }
-                UpdateGridView();
+                catch (Exception ex)
+                {
+                    LabelNeg.Text = ex.Message;
+                }
+                finally
+                {
+                    if (conn != null)
+                    {
+                        conn.Close();
+                        UpdateGridView();
+                    }
+                }
             }
+            else
+            {
+                LabelPos.Text = "";
+                LabelNeg.Text = "Your Pokémon got away";
+            }
+
         }
     }
 }

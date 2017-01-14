@@ -9,7 +9,7 @@
             <asp:DropDownList ID="DropDownListPokemons" runat="server" CssClass="input_field" AutoPostBack="False" Width="200px" OnSelectedIndexChanged="DropDownListPokemons_SelectedIndexChanged"></asp:DropDownList>
         </div>
         <div style="margin-top: 15px; margin-bottom: 15px">
-            <asp:Label ID="LabelMessage" runat="server" Font-Names="roboto" ForeColor="Black"></asp:Label>
+            <asp:Label ID="LabelMessage" runat="server" Text=""></asp:Label>
         </div>
         <div>
             <asp:Button ID="ButtonDelete" runat="server" CssClass="button" OnClick="ButtonDelete_Click" Text="Delete" />

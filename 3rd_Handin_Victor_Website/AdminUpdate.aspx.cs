@@ -12,6 +12,10 @@ namespace _3rd_Handin_Victor_Website
 {
     public partial class AdminUpdate : System.Web.UI.Page
     {
+        SqlDataAdapter da = null;
+        DataSet ds = null;
+        DataTable dt = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             UpdateGridView();
@@ -20,9 +24,7 @@ namespace _3rd_Handin_Victor_Website
         private void UpdateGridView()
         {
             SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
-            SqlDataAdapter da = null;
-            DataSet ds = null;
-            DataTable dt = null;
+
             string sqlsel = "SELECT * FROM Pokemons";
 
             try
@@ -58,10 +60,8 @@ namespace _3rd_Handin_Victor_Website
         protected void ButtonUpdate_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
-            SqlDataAdapter da = null;
-            DataSet ds = null;
-            DataTable dt = null;
             SqlCommand cmd = null;
+
             string sqlsel = "SELECT * FROM Pokemons";
             string sqlupd = "UPDATE Pokemons SET PokemonName = @PokemonName, NextEvulotion = @NextEvulotion, PictureLink = @PictureLink WHERE PokemonNumber = @PokemonNumber";
 
@@ -101,15 +101,16 @@ namespace _3rd_Handin_Victor_Website
             }
             finally
             {
-                conn.Close();
+                if (conn != null)
+                {
+                    conn.Close();
+                }
 
                 TextBoxUpdateName.Text = String.Empty;
                 TextBoxUpdateEvol.Text = String.Empty;
                 TextBoxUpdatePic.Text = String.Empty;
             }
         }
-
-
     }
 }
 

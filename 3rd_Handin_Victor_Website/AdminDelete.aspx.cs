@@ -12,6 +12,10 @@ namespace _3rd_Handin_Victor_Website
 {
     public partial class AdminDelete : System.Web.UI.Page
     {
+        SqlDataAdapter da = null;
+        DataSet ds = null;
+        DataTable dt = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -26,9 +30,7 @@ namespace _3rd_Handin_Victor_Website
         private void UpdateGridView()
         {
             SqlConnection conn = new SqlConnection (@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
-            SqlDataAdapter da = null;
-            DataSet ds = null;
-            DataTable dt = null;
+
             string sqlsel = "SELECT * FROM Pokemons";
 
             try
@@ -55,7 +57,10 @@ namespace _3rd_Handin_Victor_Website
             }
             finally
             {
-                conn.Close();
+                if (conn != null)
+                {
+                    conn.Close();
+                }
             }
         }
 
@@ -75,22 +80,17 @@ namespace _3rd_Handin_Victor_Website
 
         protected void ButtonDelete_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection
-                (@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
-            SqlDataAdapter da = null;
+            SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
             SqlCommandBuilder cb = null;
-            DataSet ds = null;
-            DataTable dt = null;
+
             string sqlsel = "SELECT * FROM Pokemons";
 
             try
             {
-                da = new SqlDataAdapter();
-                da.SelectCommand = new SqlCommand(sqlsel, conn);
-
+                da = new SqlDataAdapter(sqlsel, conn);
                 cb = new SqlCommandBuilder(da);
-
                 ds = new DataSet();
+
                 da.Fill(ds, "MyPokemons");
                 dt = ds.Tables["MyPokemons"];
 
@@ -110,7 +110,10 @@ namespace _3rd_Handin_Victor_Website
             }
             finally
             {
-                conn.Close();
+                if (conn != null)
+                {
+                    conn.Close();
+                }
 
                 UpdateGridView();
             }

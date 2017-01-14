@@ -8,7 +8,7 @@ namespace _3rd_Handin_Victor_Website
     {
         SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
         SqlCommand cmd = new SqlCommand();
-        private string query;
+        private string splogin;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,28 +18,38 @@ namespace _3rd_Handin_Victor_Website
         protected void ButtonLogin_Click(object sender, EventArgs e)
         {
             conn.Open();
-            query = "sp_LoginPokehunter-admin";
-            SqlCommand cmd = new SqlCommand(query, conn);
+            splogin = "sp_LoginPokehunter-admin";
+            SqlCommand cmd = new SqlCommand(splogin, conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Username", TextBoxName.Text.ToString());
             cmd.Parameters.AddWithValue("@Password", TextBoxPassword.Text.ToString());
 
-            using (var reader = cmd.ExecuteReader())
+            using (var rdr = cmd.ExecuteReader())
             {
-                if(reader.HasRows)
+                if(rdr.HasRows)
                 {
-                    reader.Read();
+                    rdr.Read();
 
-                    Session["Name"] = reader["Name"].ToString();
-                    Session["Admin"] = Convert.ToBoolean(reader["IsAdmin"].ToString());
-                    Session["PokehunterID"] = Convert.ToInt32(reader["PokehunterID"].ToString());
+                    Session["Name"] = rdr["Name"].ToString();
+                    Session["Admin"] = Convert.ToBoolean(rdr["IsAdmin"].ToString());
+                    Session["PokehunterID"] = Convert.ToInt32(rdr["PokehunterID"].ToString());
 
-                    conn.Close();
+                    if (rdr != null)
+                    {
+                        rdr.Close();
+                    }
+                    if (conn != null)
+                    {
+                        conn.Close();
+                    }
                     Response.Redirect("MyPage.aspx");
                 }
                 else
                 {
-                    conn.Close();
+                    if (conn != null)
+                    {
+                        conn.Close();
+                    }
                     LabelLogin.Text = "Invalid user name or password";
                 }
             }

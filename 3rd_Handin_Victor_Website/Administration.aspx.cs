@@ -27,14 +27,16 @@ namespace _3rd_Handin_Victor_Website
             SqlDataAdapter da = null;
             DataSet ds = null;
             DataTable dt = null;
-            string sqlsel = "SELECT PokemonNumber,PokemonName,NextEvulotion,PictureLink FROM Pokemons";
+
+            string sqlsel = "SELECT * FROM Pokemons";
+
 
             try
             {
-                da = new SqlDataAdapter();
-                da.SelectCommand = new SqlCommand(sqlsel, conn);
-
+                da = new SqlDataAdapter(sqlsel, conn);
                 ds = new DataSet();
+                dt = new DataTable();
+
                 da.Fill(ds, "MyPokemons");
                 dt = ds.Tables["MyPokemons"];
 
@@ -47,7 +49,10 @@ namespace _3rd_Handin_Victor_Website
             }
             finally
             {
-                conn.Close();
+                if (conn != null)
+                {
+                    conn.Close();
+                }
             }
         }
     }

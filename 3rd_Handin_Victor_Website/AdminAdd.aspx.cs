@@ -23,14 +23,15 @@ namespace _3rd_Handin_Victor_Website
             SqlDataAdapter da = null;
             DataSet ds = null;
             DataTable dt = null;
+
             string sqlsel = "SELECT PokemonNumber,PokemonName,NextEvulotion,PictureLink FROM Pokemons";
 
             try
             {
-                da = new SqlDataAdapter();
-                da.SelectCommand = new SqlCommand(sqlsel, conn);
-
+                da = new SqlDataAdapter(sqlsel, conn);
                 ds = new DataSet();
+                dt = new DataTable();
+
                 da.Fill(ds, "MyPokemons");
                 dt = ds.Tables["MyPokemons"];
 
@@ -43,31 +44,32 @@ namespace _3rd_Handin_Victor_Website
             }
             finally
             {
-                conn.Close();
+                if (conn != null)
+                {
+                    conn.Close();
+                }
             }
         }
 
         protected void ButtonAddPokemon_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection
-                (@"data source = .\SQLEXPRESS; 
-                integrated security = true; 
-                database = Pokemons");
+            SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
+            SqlCommand cmd = null;
             SqlDataAdapter da = null;
             DataSet ds = null;
             DataTable dt = null;
-            SqlCommand cmd = null;
-            string sqlsel = "select * from Pokemons";
-            string sqlins = "insert into Pokemons values (@PokemonName, @NextEvulotion, @PictureLink)";
+
+
+            string sqlsel = "SELECT * FROM Pokemons";
+            string sqlins = "INSERT INTO pokemons VALUES (@PokemonName, @NextEvulotion, @PictureLink)";
 
             if (Page.IsValid)
 
             try
             {
-                da = new SqlDataAdapter();
-                da.SelectCommand = new SqlCommand(sqlsel, conn);
-
+                da = new SqlDataAdapter(sqlsel, conn);
                 ds = new DataSet();
+
                 da.Fill(ds, "MyPokemons");
                 dt = ds.Tables["MyPokemons"];
 
@@ -92,7 +94,10 @@ namespace _3rd_Handin_Victor_Website
             }
             finally
             {
-                conn.Close();
+                if (conn != null)
+                {
+                    conn.Close();
+                }
 
                 UpdateGridView();
 

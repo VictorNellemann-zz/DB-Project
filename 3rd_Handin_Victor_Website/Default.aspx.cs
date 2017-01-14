@@ -13,19 +13,23 @@ namespace _3rd_Handin_Victor_Website
 {
     public partial class Default : System.Web.UI.Page
     {
-        DataSet ds;
-        DataTable dt;
+        SqlDataAdapter da = null;
+        DataSet ds = null;
+        DataTable dt = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(@"data source = .\SQLEXPRESS; integrated security = true; database = Pokemons");
             string query = @" SELECT TOP 6 PictureLink FROM Pokemons";
-            DataTable dt = new DataTable();
 
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                da.Fill(dt);
+                da = new SqlDataAdapter(query, conn);
+                ds = new DataSet();
+                dt = new DataTable();
+
+                da.Fill(ds, "Pokemons");
+                dt = ds.Tables["Pokemons"];
             }
             catch (Exception ex)
             {

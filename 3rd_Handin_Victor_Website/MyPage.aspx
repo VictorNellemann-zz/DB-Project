@@ -5,7 +5,7 @@
     <div style="display:inline-block; float:left; width:280PX">
         <h1>My Pokehunter page</h1>
         <div>
-            <asp:Button ID="ButtonAdd" runat="server" Text="Catch a pokémon" CssClass="button" PostBackUrl="~/AdminAdd.aspx" Font-Size="Larger" />
+            <asp:Button ID="ButtonAdd" runat="server" Text="Catch a pokémon" CssClass="button" PostBackUrl="~/MyPageAdd.aspx" Font-Size="Larger" />
         </div>
         <div style="margin-top:20px">
             <asp:Button ID="ButtonUpdate" runat="server" Text="Update a pokémon" CssClass="button" PostBackUrl="~/AdminUpdate.aspx" BackColor="#FFCB06" Font-Size="Larger" />
