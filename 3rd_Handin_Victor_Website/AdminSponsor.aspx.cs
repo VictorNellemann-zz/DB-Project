@@ -16,13 +16,10 @@ namespace _3rd_Handin_Victor_Website
         DataTable dt;
 
         protected void Page_Load(object sender, EventArgs e)
-        {
-            
-
+        {        
             if (!Page.IsPostBack)
             {
                 UpdatePage();
-
                 TextBoxName.Text = String.Empty;
                 TextBoxWebsite.Text = String.Empty;
                 TextBoxLogo.Text = String.Empty;
@@ -35,16 +32,15 @@ namespace _3rd_Handin_Victor_Website
                     ds.ReadXml(Server.MapPath("~/XMLFiles/Sponsors.xml"));
                     dt = ds.Tables["Sponsor"];
 
-                    foreach (DataRow r in dt.Select("SponsorId = " + Convert.ToInt32(DropDownListSponsor.SelectedValue)))
+                    foreach (DataRow dr in dt.Select("SponsorId = " + Convert.ToInt32(DropDownListSponsor.SelectedValue)))
                     {
-                        TextBoxId.Text = r["SponsorId"].ToString();
-                        TextBoxName.Text = r["Name"].ToString();
-                        TextBoxWebsite.Text = r["Website"].ToString();
-                        TextBoxLogo.Text = r["Logo"].ToString();
+                        TextBoxId.Text = dr["SponsorId"].ToString();
+                        TextBoxName.Text = dr["Name"].ToString();
+                        TextBoxWebsite.Text = dr["Website"].ToString();
+                        TextBoxLogo.Text = dr["Logo"].ToString();
                     }
 
                     LabelMessage.Text = TextBoxName.Text + " has been selected";
-
                     DropDownListSponsor.SelectedIndex = 0;
 
                     ButtonCreate.Enabled = false;
@@ -52,13 +48,13 @@ namespace _3rd_Handin_Victor_Website
                     ButtonDelete.Enabled = true;
                 }
             }
-
         }
 
         public void UpdatePage()
         {
             DropDownListSponsor.AutoPostBack = true;
             DropDownListSponsor.Items.Clear();
+
             try
             {
                 ds = new DataSet();
@@ -136,7 +132,7 @@ namespace _3rd_Handin_Victor_Website
 
             ds.WriteXml(Server.MapPath("~/XMLFiles/Sponsors.xml"));
 
-            LabelMessage.Text = TextBoxName.Text + " has been created with SponsorId " + (maxSponsorId + 1);
+            LabelMessage.Text = TextBoxName.Text + " has been created with id " + (maxSponsorId + 1);
             UpdatePage();
         }
 
@@ -146,12 +142,12 @@ namespace _3rd_Handin_Victor_Website
             ds.ReadXml(Server.MapPath("~/XMLFiles/Sponsors.xml"));
             dt = ds.Tables["Sponsor"];
 
-            foreach (DataRow r in dt.Select("SponsorID = " + TextBoxId.Text))
+            foreach (DataRow dr in dt.Select("SponsorID = " + TextBoxId.Text))
             {
-                r["SponsorId"] = Convert.ToInt32(TextBoxId.Text);
-                r["Name"] = TextBoxName.Text;
-                r["Website"] = TextBoxWebsite.Text;
-                r["Logo"] = TextBoxLogo.Text;
+                dr["SponsorId"] = Convert.ToInt32(TextBoxId.Text);
+                dr["Name"] = TextBoxName.Text;
+                dr["Website"] = TextBoxWebsite.Text;
+                dr["Logo"] = TextBoxLogo.Text;
             }
 
             ds.WriteXml(Server.MapPath("~/XMLFiles/Sponsors.xml"));

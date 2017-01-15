@@ -27,7 +27,13 @@
   <Sponsor>
     <SponsorId>5</SponsorId>
     <Name>Disney</Name>
-    <Website>http://disney.dk/	</Website>
+    <Website>http://disney.dk/</Website>
     <Logo>Logo-Disney</Logo>
+  </Sponsor>
+  <Sponsor>
+    <SponsorId>6</SponsorId>
+    <Name>Bass</Name>
+    <Website>Bass</Website>
+    <Logo>Bass</Logo>
   </Sponsor>
 </Sponsors>
